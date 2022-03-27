@@ -19,14 +19,13 @@ apellido = st.text_input("Apellido")
 
 pais = st.selectbox("País de Origen", options=['Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro'])
 #location = st.multiselect("País de Origen", ('Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro')
-zona = 1 if pais == 'Canadá'
-zona = 1 if pais == 'Estados Unidos'
-zona = 1 if pais == 'México'
-zona = 2 if pais == 'Alemania'
-zona = 2 if pais == 'España'
-zona = 2 if pais == 'Francia'
-zona = 2 if pais == 'Reino Unido'
-zona = 3 if pais == 'Otro'
+if pais == 'Otro':
+  zona = 3
+elif (pais == 'Canadá' or pais == 'Estados Unidos' or pais == 'México'):
+  zona = 1
+else:
+  zona = 2
+
 tipocambio = 1.1 if zona == 1
 tipocambio = 1 if zona == 2
 tipocambio = 0.048 if zona == 3
