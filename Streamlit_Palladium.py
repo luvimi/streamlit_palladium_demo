@@ -5,7 +5,7 @@ import datetime as dt
 model_filename = 'Churn_Palladium.pkl'
 loaded_model = pickle.load(open(model_filename, 'rb')
 
-#st.title("PALLADIUM")
+st.title("PALLADIUM")
 st.write("""
          Modelo de predicción de CANCELACIÓN a partir de los datos de Reserva.
          """)
