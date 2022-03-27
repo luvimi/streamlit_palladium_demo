@@ -2,9 +2,8 @@ import streamlit as st
 import pickle
 import datetime as dt
 
-pick_read = open('Churn_Palladium.pkl','rb')
-loaded_model = pickle.load(pick_read)
-pick_read.close()
+model_filename = 'Churn_Palladium.pkl'
+loaded_model = pickle.load(open(model_filename, 'rb')
 
 st.title("PALLADIUM")
 st.write("""
