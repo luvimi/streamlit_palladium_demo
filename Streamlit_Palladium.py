@@ -26,20 +26,28 @@ elif (pais == 'Canadá' or pais == 'Estados Unidos' or pais == 'México'):
 else:
   zona = 2
 
-tipocambio = 1.1 if zona == 1
-tipocambio = 1 if zona == 2
-tipocambio = 0.048 if zona == 3
-monedaeuro = 1 if tipocambio == 1 else 0
+if zona == 1:
+  tipocambio = 1.1 
+elif zona == 2:
+  tipocambio = 1
+else:
+  tipocambio = 0.048
+
+if tipocambio == 1:
+  monedaeuro = 1 
+else: 0
 
 #fecha_llegada = st.date_input("¿Cuándo es su fecha de llegada?", datetime.date(2019, 7, 6))
 hoy = datetime.date.today()
 manana = hoy + datetime.timedelta(days=1)
 start_date = st.date_input('Start date', hoy)
 end_date = st.date_input('End date', manana)
+
 if start_date < end_date:
     st.success('Día de Llegada: `%s`\n\nDía de Salida:`%s`' % (start_date, end_date))
 else:
     st.error('Error: El día de Salida debe ser posterior al día de llegada.')
+
 ano = start_date.dt.year
 mes = start_date.dt.month
 diasemana = start_date.dt.day
@@ -51,6 +59,7 @@ adultos = st.slider("Nº de Adultos", 1, 4, 1)
 nenes = st.slider("Nº de Niños", 1, 4, 1)
 bebes = st.slider("Nº de Bebes", 1, 4, 1)
 pax = (adultos + nenes)
+
 if (adultos > 2 or nenes > 0 or bebes > 0):
   targetfam1 = 1
 elif adultos == 2:
@@ -59,7 +68,10 @@ else:
   targetfam3 = 3
 
 reservapago = st.radio("¿Pagará ahora su Reserva con un 10% de descuento?", ("SI", "Más tarde"))
-reservapagada = 1 if reservapago == 'SI' else 0
+
+if reservapago == 'SI':
+  reservapagada = 1 
+else: 0
 
 input_data = [['noches', 2, 'pax', 'adultos', 'nenes', 'bebes', 1, 0, 0, 0, 'bebes', 
                765, 0, 0, 0, 0, 0, 'antiguedadreservar', 'ano', 'mes', 'diasemana', 
