@@ -3,7 +3,7 @@ import pickle
 import datetime as dt
 
 model_filename = 'Churn_Palladium.pkl'
-loaded_model = pickle.load(open(model_filename, 'rb')
+loaded_model = pickle.load(open(model_filename, 'rb'))
 
 st.title("PALLADIUM")
 st.write("""
