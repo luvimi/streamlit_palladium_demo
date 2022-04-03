@@ -132,10 +132,10 @@ else:
 
 # FECHAS
 hoy = dt.date.today()
-ano = start_date.dt.date.year
-mes = start_date.dt.date.month
-diasemana = start_date.dt.date.day
-semanaano = start_date.dt.isocalendar().week
+ano = start_date.datetime.date.year
+mes = start_date.datetime.date.month
+diasemana = start_date.datetime.date.day
+semanaano = start_date.datetime.isocalendar().week
 noches = (end_date - start_date).days
 antiguedadreservar = (start_date - hoy).days
 
