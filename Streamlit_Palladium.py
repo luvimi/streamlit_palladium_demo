@@ -226,4 +226,4 @@ if st.button("Aceptar"):
          st.write(f":+1: Gracias, me congratulo en anunciarle que usted, {tratamiento} {nombre} {apellido} MANTENDRÁ su reserva")
 
 st.write(input)
-st.write(perdiction)
+st.write(prediction)
