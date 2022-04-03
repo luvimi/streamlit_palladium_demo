@@ -25,7 +25,7 @@ st.write("""
 tratamiento = st.radio("Tratamiento", ("Sr.", "Sra."))
 nombre = st.text_input("Nombre")
 apellido = st.text_input("Apellido")
-pais = st.selectbox("País de Origen", options=['Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro'], index='España')
+pais = st.selectbox("País de Origen", options=['Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro'], index=['España'])
 hotel = st.selectbox("Hotel de Destino", options=['Bless', 'Fiesta', 'Hard Rock Hotel', 'Mallorca Rocks', 'Palladium', 'Sa Talaia', 'TRS', 'Ushuaia'])
 adultos = st.slider("Adultos", 0, 8, 1)
 nenes = st.slider("Niños", 0, 8, 0)
