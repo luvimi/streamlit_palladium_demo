@@ -132,7 +132,11 @@ else:
 
 # FECHAS
 hoy = dt.date.today()
-ano = start_date.datetime.date.year
+anottoo = dt.date(hoy).year
+mesttoo = start_date.datetime.date.month
+diasemanattoo = start_date.datetime.date.day
+semanaanottoo = start_date.datetime.isocalendar().week
+ano = dt.date(start_date).year
 mes = start_date.datetime.date.month
 diasemana = start_date.datetime.date.day
 semanaano = start_date.datetime.isocalendar().week
