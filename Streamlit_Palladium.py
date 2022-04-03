@@ -212,7 +212,7 @@ prediction = loaded_model.predict(input)
 
 # Devolvemos resultado
 if st.button("Aceptar"):
-  if prediction == 1: 
+  if prediction == 0: 
          st.write(f":cry: No se lo debería de decir, pero usted, {tratamiento} {nombre} {apellido}, CANCELARÁ su reserva")
   else: 
          st.write(f":+1: Gracias, me congratulo en anunciarle que usted, {tratamiento} {nombre} {apellido} MANTENDRÁ su reserva")
