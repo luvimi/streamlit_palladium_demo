@@ -132,16 +132,20 @@ else:
 
 # FECHAS
 hoy = dt.date.today()
-anottoo = dt.date(start_date).year
-mesttoo = start_date.datetime.date.month
-diasemanattoo = start_date.datetime.date.day
-semanaanottoo = start_date.datetime.isocalendar().week
-ano = dt.date(start_date).year
-mes = start_date.datetime.date.month
-diasemana = start_date.datetime.date.day
-semanaano = start_date.datetime.isocalendar().week
-noches = (end_date - start_date).days
-antiguedadreservar = (start_date - hoy).days
+dateisohoy = hoy.isocalendar()
+anottoo = hoy.year
+mesttoo = hoy.month
+diattoo = hoy.day
+diasemanattoo = dateisohoy[2]
+semanaanottoo = dateisohoy[1]
+dateisostart = start_date.isocalendar()
+ano = start_date.year
+mes = start_date.month
+dia = start_date.day
+diasemana = dateisostart[2]
+semanaano = dateisostart[1]
+hoy = dt.date.today()
+antiguedadreserva = (start_date - hoy).days
 
 # PAX
 pax = (adultos + nenes)
