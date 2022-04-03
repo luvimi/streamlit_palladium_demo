@@ -33,6 +33,7 @@ nenes = st.slider("Niños", 0, 8, 1)
 bebes = st.slider("Bebes", 0, 4, 1)
 start_date = st.date_input('Fecha de Entrada: ')
 end_date = st.date_input('Fecha de Salida: ')
+noches = (end_date - start_date).days
 reservapago = st.selectbox("Pagará ahora la reserva con un 10% de descuento o más tarde: ", options=['Ahora', 'Más tarde'])
 
 # ZONAORIGEN
