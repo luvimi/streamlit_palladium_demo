@@ -154,15 +154,22 @@ pax = (adultos + nenes)
 # TARGETFAM
 if (adultos > 2 or nenes > 0 or bebes > 0):
   targetfam1 = 1
+  targetfam2 = 0
+  targetfam3 = 0
 elif adultos == 2:
-  targetfam2 = 2
+  targetfam1 = 0
+  targetfam2 = 1
+  targetfam3 = 0
 else:
-  targetfam3 = 3
+  targetfam1 = 0
+  targetfam2 = 0
+  targetfam3 = 1
 
 # RESERVAPAGO
-if reservapago == 'Ahora':
-  reservapagada = 1 
-else: 0
+if reservapago == 'Si':
+  reservapagada = 1
+else:
+  reservapagada = 0
          
 # COMERCIALIZADORA CMS
 cms = random.randint(1,9)
