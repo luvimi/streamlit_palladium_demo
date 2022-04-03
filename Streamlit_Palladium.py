@@ -7,6 +7,8 @@ from datetime import date
 import pandas as pd
 import random
 from sklearn.preprocessing import MinMaxScaler
+import sklearn
+from sklearn.ensemble import GradientBoostingClassifier
 from xgboost import XGBClassifier
 
 model_filename = 'Churn_Palladium_Europa_XGBOOST.pkl'
