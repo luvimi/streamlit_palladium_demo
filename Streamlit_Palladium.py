@@ -28,9 +28,9 @@ nombre = st.text_input("Nombre")
 apellido = st.text_input("Apellido")
 pais = st.selectbox("País de Origen", options=['Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro'])
 hotel = st.selectbox("Hotel de Destino", options=['Bless', 'Fiesta', 'Hard Rock Hotel', 'Mallorca Rocks', 'Palladium', 'Sa Talaia', 'TRS', 'Ushuaia'])
-adultos = st.slider("Adultos", 1, 8, 1)
-nenes = st.slider("Niños", 1, 8, 1)
-bebes = st.slider("Bebes", 1, 4, 1)
+adultos = st.slider("Adultos", 0, 8, 1)
+nenes = st.slider("Niños", 0, 8, 1)
+bebes = st.slider("Bebes", 0, 4, 1)
 start_date = st.date_input('Fecha de Entrada: ')
 end_date = st.date_input('Fecha de Salida: ')
 reservapago = st.selectbox("Pagará ahora la reserva con un 10% de descuento o más tarde: ", options=['Ahora', 'Más tarde'])
@@ -131,7 +131,7 @@ else:
 
 
 # FECHAS
-hoy = datetime.date.today()
+hoy = dt.date.today()
 ano = start_date.dt.year
 mes = start_date.dt.month
 diasemana = start_date.dt.day
