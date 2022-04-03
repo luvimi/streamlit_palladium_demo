@@ -174,7 +174,7 @@ else:
   targetfam3 = 1
 
 # RESERVAPAGO
-if reservapago == 'Si':
+if reservapago == 'Ahora':
   reservapagada = 1
 else:
   reservapagada = 0
@@ -225,6 +225,6 @@ if st.button("Aceptar"):
   else: 
          st.write(f":+1: Gracias, me congratulo en anunciarle que usted, {tratamiento} {nombre} {apellido} MANTENDRÁ su reserva")
 
-st.write(input_data)
-st.write(input)
-st.write(prediction)
+#st.write(input_data)
+#st.write(input)
+#st.write(prediction)
