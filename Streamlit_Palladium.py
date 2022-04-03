@@ -21,20 +21,27 @@ st.write("""
          Modelo de predicción de CANCELACIÓN a partir de los datos de Reserva.
          """)
 
-tratamiento = st.selectbox("Tratamiento", options=['Sr.', 'Sra.'])
-tratosr = 1 if tratamiento == 'Sr.' else 0
-tratosra = 1 if tratamiento == 'Sra.' else 0
+#tratamiento = st.selectbox("Tratamiento", options=['Sr.', 'Sra.'])
+tratamiento = st.radio("Tratamiento", ("Sr.", "Sra."))
 nombre = st.text_input("Nombre")
 apellido = st.text_input("Apellido")
 pais = st.selectbox("País de Origen", options=['Alemania', 'Canadá', 'España', 'Estados Unidos', 'Francia', 'México', 'Reino Unido', 'Otro'])
 hotel = st.selectbox("Hotel de Destino", options=['Bless', 'Fiesta', 'Hard Rock Hotel', 'Mallorca Rocks', 'Palladium', 'Sa Talaia', 'TRS', 'Ushuaia'])
 adultos = st.slider("Adultos", 0, 8, 1)
-nenes = st.slider("Niños", 0, 8, 1)
-bebes = st.slider("Bebes", 0, 4, 1)
+nenes = st.slider("Niños", 0, 8, 0)
+bebes = st.slider("Bebes", 0, 4, 0)
 start_date = st.date_input('Fecha de Entrada: ')
 end_date = st.date_input('Fecha de Salida: ')
 noches = (end_date - start_date).days
 reservapago = st.selectbox("Pagará ahora la reserva con un 10% de descuento o más tarde: ", options=['Ahora', 'Más tarde'])
+
+# TRATAMIENTO
+if tratamiento == 'Sr.':
+  tratosr = 1 
+  tratosra = 0
+else:
+  tratosr = 0 
+  tratosra = 1
 
 # ZONAORIGEN
 if pais == 'Otro':
@@ -52,6 +59,7 @@ elif zonaorigen == 2:
 else:
   tipocambio = 0.048
 
+# MONEDAEURO
 if tipocambio == 1:
   monedaeuro = 1 
 else: 0
@@ -212,7 +220,10 @@ prediction = loaded_model.predict(input)
 
 # Devolvemos resultado
 if st.button("Aceptar"):
-  if prediction == 0: 
+  if prediction == 1: 
          st.write(f":cry: No se lo debería de decir, pero usted, {tratamiento} {nombre} {apellido}, CANCELARÁ su reserva")
   else: 
          st.write(f":+1: Gracias, me congratulo en anunciarle que usted, {tratamiento} {nombre} {apellido} MANTENDRÁ su reserva")
+
+st.write(input)
+st.write(perdiction)
